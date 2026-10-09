@@ -1,0 +1,22 @@
+[package]
+name = "mokost-anime-center"
+version = "0.6.3"
+description = "Calendario local de estrenos de anime"
+authors = ["Mokost"]
+edition = "2021"
+
+[lib]
+name = "mokost_anime_center_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+tauri-plugin-notification = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+semver = "1"
